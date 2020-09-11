@@ -6,13 +6,21 @@ This project is intended to review the work carried out by different kagglers on
 Gaps and Plan:
 
 From the review of existing work, it was identified that the boosting algorithms like LightGBM and XGBoost show better performance than other models for binary classification with imbalanced data. There do exist other boosting algorithm like CatBoost which is much faster than its counterparts for bigger datasets and none of the kernels have showed implementation using this model. Also, for such boosting algorithms it is essential to select a proper set of hyperparameters for getting better performance. Though one of the kernels did use grid search on hyperparameters to tune the model but not all the important parameters like max_depth, learning rate were identified and grid search for finding optimal parameters is very time consuming and requires more computational power. To overcome the complexity of the Grid search random search of hyperparameters can be used which randomly subsets a set of parameter values and it is faster compared to grid search. The results showed that models performed best for imbalanced dataset, but for any machine learning model it is essential to balance the dataset. Hence to get an optimal prediction of the target following is the plan which is implemented:
+
 •	The data is checked for skewness and kurtosis, based on the result the data is standardized.
+
 •	Target attribute is balanced using ROSE.
+
 •	In total 8 different Xgboost and CatBoost models are built 
+
 •	Two variants of Xgboost and Two Variants of CatBoost models are built one each for balanced and unbalanced dataset using grid search for hyper parameter tuning.
+
 •	Two variants of Xgboost and Two Variants of CatBoost models are built one each for balanced 
+
 and unbalanced dataset using random search for hyper parameter tuning.
+
 •	The models are build using both balanced and unbalanced dataset to monitor how the model performs in both the cases. The metric used for evaluation is AUC. 
+
 •	Further to improve the model performance 3-fold cross validation is done
 
 References 
